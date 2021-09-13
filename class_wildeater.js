@@ -62,11 +62,11 @@ class WildEater {
             this.x = newX;
             this.y = newY;
 
-            matrix[this.y][this.x-1] = 1;
+            matrix[this.y][this.x - 1] = 1;
 
             this.energy--;
 
-            
+
         }
 
         this.die();
@@ -112,22 +112,22 @@ class WildEater {
 
     die() {
         if (this.energy <= 0) {
-             /*matrix[this.y][this.x] = 0;
-            for (let i in wildEaterArr) {
-                if (this.x == wildEaterArr[i].x && this.y == wildEaterArr[i].y) {
-                    wildEaterArr.splice(i, 1);
-                    break;
-                }
-            } */
+            /*matrix[this.y][this.x] = 0;
+           for (let i in wildEaterArr) {
+               if (this.x == wildEaterArr[i].x && this.y == wildEaterArr[i].y) {
+                   wildEaterArr.splice(i, 1);
+                   break;
+               }
+           } */
 
-          
-            if(this.index == 4){
+
+            if (this.index == 4) {
                 matrix[this.y][this.x] = 1;
-             }
- 
-             if(this.index == 1){
-                 matrix[this.y][this.x]=0;
-             }
+            }
+
+            if (this.index == 1) {
+                matrix[this.y][this.x] = 0;
+            }
         }
     }
 

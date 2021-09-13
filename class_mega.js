@@ -64,14 +64,14 @@ class Mega {
 
             this.energy--;
 
-            matrix[this.y][this.x-1] = 2;
+            matrix[this.y][this.x - 1] = 2;
         }
 
         this.die();
     }
 
     eat() {
-        let emptyCells = this.chooseCell(3,4);
+        let emptyCells = this.chooseCell(3, 4);
         let newCell = random(emptyCells);
 
 
@@ -110,16 +110,16 @@ class Mega {
 
     die() {
         if (this.energy <= 0) {
-             matrix[this.y][this.x] = 0;
+            matrix[this.y][this.x] = 0;
             for (let i in megaArr) {
                 if (this.x == megaArr[i].x && this.y == megaArr[i].y) {
                     megaArr.splice(i, 1);
                     break;
                 }
-            } 
+            }
 
-            
-            
+
+
         }
     }
 

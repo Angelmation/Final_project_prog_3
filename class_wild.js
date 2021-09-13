@@ -64,7 +64,7 @@ class Wild {
 
             this.energy--;
 
-         
+
 
         }
 
@@ -119,12 +119,12 @@ class Wild {
                 }
             } */
 
-            if(this.index == 3){
-               matrix[this.y][this.x] = 4;
+            if (this.index == 3) {
+                matrix[this.y][this.x] = 4;
             }
 
-            if(this.index == 4){
-                matrix[this.y][this.x]=0;
+            if (this.index == 4) {
+                matrix[this.y][this.x] = 0;
             }
         }
     }

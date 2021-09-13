@@ -1,4 +1,4 @@
-var matrix =[];
+var matrix = [];
 
 function matrixGen(matY, matX, grass, grassEat, gazan, gazanaker, mega) {
     for (let i = 0; i < matY; i++) {
@@ -6,23 +6,23 @@ function matrixGen(matY, matX, grass, grassEat, gazan, gazanaker, mega) {
         for (let j = 0; j < matX; j++) {
             matrix[i][j] = 0;
         }
-    } 
-for (let i = 0; i < grass; i++) { 
-
-        var y = Math.floor(Math.random() * matY) 
-        var x = Math.floor(Math.random() * matX) 
-        if (matrix[y][x] == 0) { 
-            matrix[y][x] = 1
-        } 
     }
-for (let i = 0; i < grassEat; i++) { 
+    for (let i = 0; i < grass; i++) {
+
+        var y = Math.floor(Math.random() * matY)
+        var x = Math.floor(Math.random() * matX)
+        if (matrix[y][x] == 0) {
+            matrix[y][x] = 1
+        }
+    }
+    for (let i = 0; i < grassEat; i++) {
         var y = Math.floor(Math.random() * matY)
         var x = Math.floor(Math.random() * matX)
         if (matrix[y][x] == 0) {
             matrix[y][x] = 2;
         }
     }
-for (let i = 0; i < gazan; i++) {
+    for (let i = 0; i < gazan; i++) {
         var y = Math.floor(Math.random() * matY)
         var x = Math.floor(Math.random() * matX)
         if (matrix[y][x] == 0) {
@@ -31,22 +31,22 @@ for (let i = 0; i < gazan; i++) {
     }
 
 
-for (let i = 0; i < gazanaker; i++) {
-    var y = Math.floor(Math.random() * matY)
-    var x = Math.floor(Math.random() * matX)
-    if (matrix[y][x] == 0) {
-        matrix[y][x] = 4;
+    for (let i = 0; i < gazanaker; i++) {
+        var y = Math.floor(Math.random() * matY)
+        var x = Math.floor(Math.random() * matX)
+        if (matrix[y][x] == 0) {
+            matrix[y][x] = 4;
+        }
     }
-}
 
 
-for (let i = 0; i < mega; i++) {
-    var y = Math.floor(Math.random() * matY)
-    var x = Math.floor(Math.random() * matX)
-    if (matrix[y][x] == 0) {
-        matrix[y][x] = 5;
+    for (let i = 0; i < mega; i++) {
+        var y = Math.floor(Math.random() * matY)
+        var x = Math.floor(Math.random() * matX)
+        if (matrix[y][x] == 0) {
+            matrix[y][x] = 5;
+        }
     }
-}
 }
 
 matrixGen(40, 40, 1500, 100, 50, 15, 5);
@@ -78,19 +78,19 @@ function setup() {
                 grassEaterArr.push(ge);
             }
             else if (matrix[y][x] === 3) {
-               var wi = new Wild(x, y ,3);
-               wildArr.push(wi);
+                var wi = new Wild(x, y, 3);
+                wildArr.push(wi);
             }
 
             else if (matrix[y][x] === 4) {
-                var we = new WildEater(x, y ,4);
+                var we = new WildEater(x, y, 4);
                 wildEaterArr.push(we);
-             }
+            }
 
-             else if (matrix[y][x] === 5) {
-                var me = new Mega(x, y ,5);
+            else if (matrix[y][x] === 5) {
+                var me = new Mega(x, y, 5);
                 megaArr.push(me);
-             }
+            }
         }
 
     }
@@ -157,15 +157,15 @@ function draw() {
 
     for (var i in wildEaterArr) {
 
-       wildEaterArr[i].eat();
+        wildEaterArr[i].eat();
 
     }
 
     for (var i in megaArr) {
 
-       megaArr[i].eat();
- 
-     }
+        megaArr[i].eat();
+
+    }
 }
 
 
