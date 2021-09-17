@@ -1,0 +1,22 @@
+{
+  "name": "final_project_prog_3",
+  "version": "1.0.0",
+  "description": "package",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angelmation/Final_project_prog_3.git"
+  },
+  "author": "Angelmation Studio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Angelmation/Final_project_prog_3/issues"
+  },
+  "homepage": "https://github.com/Angelmation/Final_project_prog_3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
