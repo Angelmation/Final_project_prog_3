@@ -1,4 +1,7 @@
-class Mega extends LivingCreature{
+var LivingCreature = require("./LivingCreature")
+var random = require("./LivingCreature")
+
+module.exports = class Mega extends LivingCreature{
     constructor(x, y, index) {
         this.x = x;
         this.y = y;

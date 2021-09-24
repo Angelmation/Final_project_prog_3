@@ -2,7 +2,7 @@
 var Grass = require("./modules/Grass.js");
 var Grasseater = require("./modules/Grasseater.js");
 var Wild = require("./modules/Wild.js");
-var WileEater = require("./modules/Wildeater.js");
+var WildEater = require("./modules/Wildeater.js");
 var Mega = require("./modules/Mega.js");
 let random = require('./modules/random');
 
@@ -18,6 +18,7 @@ grassHashiv = 0;
 grasseaterHashiv = 0;
 wildHashiv = 0;
 wildeaterHashiv = 0;
+megaHashiv=0;
 Hashiv = 0;
 
 
@@ -58,7 +59,7 @@ function matrixGenerator(matrixSize, grass, grassEater, wild, wildeater, mega) {
         matrix[customY][customX] = 5;
     }
 }
-matrixGenerator(20, 10, 5, 1, 1, 1);
+matrixGenerator(20, 10, 5, 3, 2, 2);
 
 
 
@@ -83,6 +84,7 @@ function creatingObjects() {
             if (matrix[y][x] == 2) {
                 var grassEater = new GrassEater(x, y);
                 grassEaterArr.push(grassEater);
+                grasseaterHashiv++;
             }
              else if (matrix[y][x] == 1) {
                 var grass = new Grass(x, y);
@@ -92,17 +94,17 @@ function creatingObjects() {
             else if (matrix[y][x] == 3) {
                 var grass = new Wild(x, y);
                 grassArr.push(grass);
-                grassHashiv++;
+               wildHashiv++;
             }
             else if (matrix[y][x] == 4) {
                 var grass = new Grass(x, y);
                 grassArr.push(grass);
-                grassHashiv++;
+                wildeaterHashiv++;
             }
             else if (matrix[y][x] == 5) {
                 var grass = new Mega(x, y);
                 grassArr.push(mega);
-                grassHashiv++;
+                megaHashiv++;
             }
         }
     }
@@ -120,11 +122,30 @@ function game() {
             grassEaterArr[i].eat();
         }
     }
+    if (grassEaterArr[0] !== undefined) {
+        for (var i in grassEaterArr) {
+            grassEaterArr[i].eat();
+        }
+    }
+    if (grassEaterArr[0] !== undefined) {
+        for (var i in grassEaterArr) {
+            grassEaterArr[i].eat();
+        }
+    }
+    if (grassEaterArr[0] !== undefined) {
+        for (var i in grassEaterArr) {
+            grassEaterArr[i].eat();
+        }
+    }
 
 
     let sendData = {
         matrix: matrix,
-        grassCounter: grassHashiv
+        grassCounter: grassHashiv,
+        grasseatercounter: grasseaterHashiv,
+        wildcount:wildHashiv,
+        wildeatercounter: wildeaterHashiv,
+        mega: megaHashiv
     }
 
 
