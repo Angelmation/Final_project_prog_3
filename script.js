@@ -1,9 +1,7 @@
+var socket = io();
+var side = 30;
+
 function setup() {
-
-    var socket = io();
-
-    var side = 30;
-
     var matrix = [];
 
     let grassCountElement = document.getElementById('grassCount');
@@ -53,4 +51,20 @@ function setup() {
             }
         }
     }
+}
+
+socket.on("weather", function (data) {
+    weath = data;
+})
+
+        socket.on('send matrix',drawCreatures )
+ 
+
+
+function ilness() {
+    socket.emit("ilness")
+}
+
+function gea() {
+    socket.emit("addgrasseater")
 }

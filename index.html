@@ -1,87 +1,114 @@
 <html>
 
 <head>
- 
-   <style>
-         canvas {
-             display: block;
-             margin: 0 auto;
-         }
- 
-         div {
-             display: inline-block;
-         }
- 
-         h1 {
-             padding: 20px;
-             text-align: center;
-         }
- 
-         body {
-             font-family: 'Noto Sans', sans-serif !important;
-         }
 
-         table, th, td {
-  border: 1px solid black;
-}
-     </style>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        h1 {
+            padding: 20px;
+            text-align: center;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif !important;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        button {
+            background-color: beige;
+            color: blue;
+            font-style: italic;
+            width: 50%;
+            border: solid black 1px;
+            border-radius: 1px;
+            position: absolute;
+        }
+    </style>
 </head>
 
 <body>
 
-      <table class="table table-hover">
-            <thead>
-                <tr>
-                    <h1>Ծրագրավորում III Երևան</h1>
-                </tr>
-                <tr>
-                    <h1>Անգելինա Կիրակոսյան</h1>
-                </tr>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Գույն</th>
-                    <th scope="col">Նկարագրություն</th>
-                    <th scope="col">Ստեղծվել է</th>
-                </tr>
-            </thead>
-            <tbody>
-                    <th scope="row">1</th>
-                    <td scope="row" style="background-color:green;"></td>
-                    <td>Կանաչը խոտն է, որը բազմանում է N ցիկլը մեկ,մահանում է երբ նրան ուտում է խոտակերը:</td>
-                    <td id="grassCount"></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td scope="row" style="background-color:orange;"></td>
-                    <td>Դեղինը խոտակերն է, որը բազմանում է N հատ խոտ ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
-                        երբ նրան ուտում է գիշատիչը:</td>
-                    <td id="grassEaterCount"></td>
-                </tr>
-                <tr>
-                     <th scope="row">3</th>
-                     <td scope="row" style="background-color:red;"></td>
-                     <td>Կարմիրը գիշատիչն է, որը բազմանում է N հատ խոտակեր ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
-                           երբ նրան սպանում է Կանաչապատողը:</td>
-                     <td id="WildCount"></td>
-                 </tr>
-                 <tr>
-                     <th scope="row">4</th>
-                     <td scope="row" style="background-color:blue;"></td>
-                     <td>Կապույտը Կանաչապատողն է, որը բազմանում է N հատ խոտակեր սպանելուց հետո և մահանում է N հատ չուտելուց հետո,քայլելիս իր ետևից խոտ է աճեցնում:</td>
-                     <td id="WildeaterCount"></td>
-                 </tr>
-                 <tr>
-                     <th scope="row">5</th>
-                     <td scope="row" style="background-color:blueviolet;"></td>
-                     <td>Կապույտը ագարակատերն է, որը բազմանում է N հատ խոտ պոկելուց հետո և մահանում է N հատ չպոկելուց հետո,քայլելիս իր ետևից խոտակեր է բնակեցնում:</td>
-                     <td id="MegaCount"></td>
-                 </tr>
-            </tbody>
-        </table>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <h1>Ծրագրավորում III Երևան</h1>
+            </tr>
+            <tr>
+                <h1>Անգելինա Կիրակոսյան</h1>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Գույն</th>
+                <th scope="col">Նկարագրություն</th>
+                <th scope="col">Ստեղծվել է</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th scope="row">1</th>
+            <td scope="row" style="background-color:green;"></td>
+            <td>Կանաչը խոտն է, որը բազմանում է N ցիկլը մեկ,մահանում է երբ նրան ուտում է խոտակերը:</td>
+            <td id="grassCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td scope="row" style="background-color:orange;"></td>
+                <td>Դեղինը խոտակերն է, որը բազմանում է N հատ խոտ ուտելուց հետո և մահանում է N հատ չուտելուց հետո, կամ
+                    երբ նրան ուտում է գիշատիչը:</td>
+                <td id="grassEaterCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td scope="row" style="background-color:red;"></td>
+                <td>Կարմիրը գիշատիչն է, որը բազմանում է N հատ խոտակեր ուտելուց հետո և մահանում է N հատ չուտելուց հետո,
+                    կամ
+                    երբ նրան սպանում է Կանաչապատողը:</td>
+                <td id="WildCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td scope="row" style="background-color:blue;"></td>
+                <td>Կապույտը Կանաչապատողն է, որը բազմանում է N հատ խոտակեր սպանելուց հետո և մահանում է N հատ չուտելուց
+                    հետո,քայլելիս իր ետևից խոտ է աճեցնում:</td>
+                <td id="WildeaterCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td scope="row" style="background-color:blueviolet;"></td>
+                <td>Կապույտը ագարակատերն է, որը բազմանում է N հատ խոտ պոկելուց հետո և մահանում է N հատ չպոկելուց
+                    հետո,քայլելիս իր ետևից խոտակեր է բնակեցնում:</td>
+                <td id="MegaCount"></td>
+            </tr>
+        </tbody>
+    </table>
 
-        <script src="p5.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="script.js"></script>
+    <div class="buttons">
+        <h1 style="color:rgb(205, 50, 166)">Events</h1>
+        <ul>
+            <li>
+                <button onclick="ilness()">Ilness</button>
+            </li>
+            <li>
+                <button onclick="addGrassEater()">Add grass eater</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
