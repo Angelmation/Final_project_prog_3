@@ -1,5 +1,3 @@
-var LivingCreature = require("./LivingCreature")
-
 module.exports = class WildEater {
     constructor(x, y, index) {
         this.x = x;

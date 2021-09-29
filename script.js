@@ -15,7 +15,7 @@ function setup() {
     socket.on("data", drawCreatures);
 
     function drawCreatures(data) {
-
+        console.log(data);
         matrix = data.matrix;
         grassCountElement.innerText = data.grassCounter;
         grassEaterCountElement.innerText = data.grassEaterCounter;
@@ -57,7 +57,7 @@ socket.on("weather", function (data) {
     weath = data;
 })
 
-        socket.on('send matrix',drawCreatures )
+// socket.on('send matrix',drawCreatures )
  
 
 

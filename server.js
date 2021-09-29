@@ -4,7 +4,8 @@ var Grasseater = require("./modules/Grasseater.js");
 var Wild = require("./modules/Wild.js");
 var WildEater = require("./modules/Wildeater.js");
 var Mega = require("./modules/Mega.js");
-let random = require('./modules/random');
+let random = require("./modules/random.js");
+
 
 
 
@@ -63,16 +64,14 @@ function matrixGenerator(matrixSize, grass, grassEater, wild, wildeater, mega) {
 matrixGenerator(20, 10, 5, 3, 2, 2);
 
 
-
-
-
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var fs = require("fs");
-const GrassEater = require("./modules/Grasseater.js");
+
 app.use(express.static("."));
+
 app.get('/', function (req, res) {
     res.redirect('index.html');
 });
@@ -81,8 +80,8 @@ server.listen(3000);
 var n = 50;
 
 weath = "winter";
-Grass = require("./Grass")
-GrassEater = require("./GrassEater")
+// Grass = require("./Grass")
+// GrassEater = require("./GrassEater")
 
 function rand(min, max) {
     return Math.random() * (max - min) + min;
@@ -110,17 +109,17 @@ function creatingObjects() {
                 grassHashiv++;
             }
             else if (matrix[y][x] == 3) {
-                var grass = new Wild(x, y);
-                wildArr.push(Wild);
+                var wild = new Wild(x, y);
+                wildArr.push(wild);
                 wildHashiv++;
             }
             else if (matrix[y][x] == 4) {
-                var grass = new WildEater(x, y);
-                wildEaterArr.push(WildEater);
+                var wildEater = new WildEater(x, y);
+                wildEaterArr.push(wildEater);
                 wildeaterHashiv++;
             }
             else if (matrix[y][x] == 5) {
-                var grass = new Mega(x, y);
+                var mega = new Mega(x, y);
                 megaArr.push(mega);
                 megaHashiv++;
             }
@@ -139,13 +138,13 @@ function game() {
     }
 
 
-    for (var i in grassEaterArr) {
-        grassEaterArr[i].eat();
-    }
+    // for (var i in grassEaterArr) {
+    //     grassEaterArr[i].eat();
+    // }
 
 
     for (var i in wildArr) {
-        wildrArr[i].eat();
+        wildArr[i].eat();
     }
 
 
@@ -216,7 +215,7 @@ io.sockets.emit("data", sendData);
 
 
 io.on('connection', function (socket) {
-    createObject();
+    creatingObjects();
     socket.on("ilness", ilness);
     socket.on("add grassEater", addGrassEater);
 });
@@ -227,6 +226,9 @@ var statistics = {};
 setInterval(function () {
     statistics.grass = grassArr.length;
     statistics.grassEater = grassEaterArr.length;
+    statistics.wild = wildArr.length;
+    statistics.wildeater = wildEaterArr.length;
+    statistics.mega = megaArr.length;
     fs.writeFile("statistics.json", JSON.stringify(statistics), function () {
         console.log("send")
     })
