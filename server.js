@@ -80,8 +80,7 @@ server.listen(3000);
 var n = 50;
 
 weath = "winter";
-// Grass = require("./Grass")
-// GrassEater = require("./GrassEater")
+
 
 function rand(min, max) {
     return Math.random() * (max - min) + min;
@@ -138,9 +137,9 @@ function game() {
     }
 
 
-    // for (var i in grassEaterArr) {
-    //     grassEaterArr[i].eat();
-    // }
+    for (var i in grassEaterArr) {
+        grassEaterArr[i].eat();
+    }
 
 
     for (var i in wildArr) {
@@ -156,6 +155,7 @@ function game() {
     for (var i in megaArr) {
         megaArr[i].eat();
     }
+    io.sockets.emit("send matrix", matrix)
 }
 
 setInterval(game, 3000)
@@ -217,7 +217,7 @@ io.sockets.emit("data", sendData);
 io.on('connection', function (socket) {
     creatingObjects();
     socket.on("ilness", ilness);
-    socket.on("add grassEater", addGrassEater);
+    socket.on("addgrassEater", addGrassEater);
 });
 
 

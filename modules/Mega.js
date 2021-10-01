@@ -1,13 +1,10 @@
 var LivingCreature = require("./LivingCreature")
-var random = require("./LivingCreature")
+var random = require("./random")
 
 module.exports = class Mega extends LivingCreature{
     constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
+        super(x, y, index);
         this.energy = 6;
-        this.index = index;
-        this.directions = [];
     }
 
     mul() {
@@ -111,16 +108,5 @@ module.exports = class Mega extends LivingCreature{
         }
     }
 
-    getNewCoordinates() {
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
+
 }
