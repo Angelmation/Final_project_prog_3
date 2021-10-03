@@ -20,7 +20,7 @@ module.exports = class Wild extends LivingCreature{
             matrix[newY][newX] = this.index;
 
             let newWild = new Wild(newX, newY, this.index);
-            wildArr.push(newWild);
+            WildArr.push(newWild);
 
 
 
@@ -75,9 +75,9 @@ module.exports = class Wild extends LivingCreature{
 
 
 
-            for (let i in grassEaterArr) {
-                if (newX === grassEaterArr[i].x && newY === grassEaterArr[i].y) {
-                    grassArr.splice(i, 1);
+            for (let i in GrassEaterArr) {
+                if (newX === GrassEaterArr[i].x && newY === GrassEaterArr[i].y) {
+                    GrassArr.splice(i, 1);
                     break;
                 }
 
@@ -97,13 +97,13 @@ module.exports = class Wild extends LivingCreature{
 
     die() {
         if (this.energy <= 0) {
-            /* matrix[this.y][this.x] = 0;
-            for (let i in wildArr) {
-                if (this.x == wildArr[i].x && this.y == wildArr[i].y) {
-                    wildArr.splice(i, 1);
+             matrix[this.y][this.x] = 0;
+            for (let i in WildArr) {
+                if (this.x == WildArr[i].x && this.y == WildArr[i].y) {
+                    WildArr.splice(i, 1);
                     break;
                 }
-            } */
+            } 
 
             if (this.index == 3) {
                 matrix[this.y][this.x] = 4;
@@ -115,16 +115,16 @@ module.exports = class Wild extends LivingCreature{
         }
     }
 
-    getNewCoordinates() {
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
+    // getNewCoordinates() {
+    //     this.directions = [
+    //         [this.x - 1, this.y - 1],
+    //         [this.x, this.y - 1],
+    //         [this.x + 1, this.y - 1],
+    //         [this.x - 1, this.y],
+    //         [this.x + 1, this.y],
+    //         [this.x - 1, this.y + 1],
+    //         [this.x, this.y + 1],
+    //         [this.x + 1, this.y + 1]
+    //     ];
+    // }
 }

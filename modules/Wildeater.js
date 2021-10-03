@@ -20,7 +20,7 @@ module.exports = class WildEater extends LivingCreature{
             matrix[newY][newX] = this.index;
 
             let newWildEater = new WildEater(newX, newY, this.index);
-            wildEaterArr.push(newWildEater);
+            WildEaterArr.push(newWildEater);
 
 
 
@@ -76,9 +76,9 @@ module.exports = class WildEater extends LivingCreature{
 
 
 
-            for (let i in wildArr) {
-                if (newX === wildArr[i].x && newY === wildArr[i].y) {
-                    grassEaterArr.splice(i, 1);
+            for (let i in WildArr) {
+                if (newX === WildArr[i].x && newY === WildArr[i].y) {
+                    GrassEaterArr.splice(i, 1);
                     break;
                 }
 
@@ -98,13 +98,13 @@ module.exports = class WildEater extends LivingCreature{
 
     die() {
         if (this.energy <= 0) {
-            /*matrix[this.y][this.x] = 0;
-           for (let i in wildEaterArr) {
-               if (this.x == wildEaterArr[i].x && this.y == wildEaterArr[i].y) {
-                   wildEaterArr.splice(i, 1);
+            matrix[this.y][this.x] = 0;
+           for (let i in WildEaterArr) {
+               if (this.x == WildEaterArr[i].x && this.y == WildEaterArr[i].y) {
+                   WildEaterArr.splice(i, 1);
                    break;
                }
-           } */
+           } 
 
 
             if (this.index == 4) {

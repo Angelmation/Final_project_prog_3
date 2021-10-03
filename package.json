@@ -1,16 +1,20 @@
 {
   "name": "final_project_prog_3",
   "version": "1.0.0",
-  "description": "package",
-  "main": "script.js",
+  "description": "my last project",
+  "main": "p5.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Angelmation/Final_project_prog_3.git"
   },
-  "author": "Angelmation Studio",
+  "keywords": [
+    "none"
+  ],
+  "author": "Angelmation",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Angelmation/Final_project_prog_3/issues"
@@ -18,8 +22,6 @@
   "homepage": "https://github.com/Angelmation/Final_project_prog_3#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "p5": "^1.4.0",
     "socket.io": "^4.2.0"
-  },
-  "devDependencies": {}
+  }
 }

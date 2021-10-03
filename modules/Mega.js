@@ -19,7 +19,7 @@ module.exports = class Mega extends LivingCreature{
             matrix[newY][newX] = this.index;
 
             let newMega = new Mega(newX, newY, this.index);
-            megaArr.push(newMega);
+            MegaArr.push(newMega);
 
 
 
@@ -73,9 +73,9 @@ module.exports = class Mega extends LivingCreature{
 
 
 
-            for (let i in wildEaterArr) {
-                if (newX === wildEaterArr[i].x && newY === wildEaterArr[i].y) {
-                    wildArr.splice(i, 1);
+            for (let i in WildEaterArr) {
+                if (newX === WildEaterArr[i].x && newY === WildEaterArr[i].y) {
+                    WildArr.splice(i, 1);
                     break;
                 }
 
@@ -96,9 +96,9 @@ module.exports = class Mega extends LivingCreature{
     die() {
         if (this.energy <= 0) {
             matrix[this.y][this.x] = 0;
-            for (let i in megaArr) {
-                if (this.x == megaArr[i].x && this.y == megaArr[i].y) {
-                    megaArr.splice(i, 1);
+            for (let i in MegaArr) {
+                if (this.x == MegaArr[i].x && this.y == MegaArr[i].y) {
+                    MegaArr.splice(i, 1);
                     break;
                 }
             }
